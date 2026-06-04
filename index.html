@@ -251,7 +251,7 @@ td{padding:4px 8px;vertical-align:middle;white-space:nowrap;font-size:11px}
 
 <header class="hdr">
   <div style="display:flex;align-items:center;gap:10px">
-    <div class="logo">FORM<b style="color:var(--tx)">4</b> INTEL <span id="verLbl">V8.0</span></div>
+    <div class="logo">FORM<b style="color:var(--tx)">4</b> INTEL <span id="verLbl">V8.1</span></div>
     <span class="hbadge live" id="snapBadge"><span class="dot"></span>SNAPSHOT</span>
     <span class="hbadge">CODE P · CEO/CFO/COO/CTO</span>
     <button class="hbtn" onclick="loadLivePrices()">⟳ LIVE</button>
@@ -334,6 +334,18 @@ td{padding:4px 8px;vertical-align:middle;white-space:nowrap;font-size:11px}
 </div>
 <div class="sh"><span>LOPEND & IN DEBAT</span> WAT NU SPEELT — MEI 2026</div>
 <div class="tnews">
+  <div class="tcard" style="border-left-color:var(--acc)">
+    <div class="tcdate">1 JUNI 2026 · SECTION 301</div>
+    <div class="tctit">🇧🇷 Section 301 — Nieuwe tarieven op Brazilië voorgesteld</div>
+    <div class="tcbod">USTR publiceerde Federal Register notice voor actie op Braziliaanse importen. Aankondiging 1 juni 2026, deadline publieke reacties 1 juli. Onderdeel van bredere "reciprocal tariff" strategie na IEEPA-ongeldigverklaring. Brazilië = staal, landbouw, vliegtuigonderdelen.</div>
+    <div class="tcimp"><span class="tctag" style="background:rgba(184,154,56,.1);color:var(--acc);border:1px solid rgba(184,154,56,.2)">Staal ↑</span><span class="tctag" style="background:rgba(74,114,168,.1);color:var(--inf);border:1px solid rgba(74,114,168,.2)">EMBRAER risico</span></div>
+  </div>
+  <div class="tcard" style="border-left-color:var(--inf)">
+    <div class="tcdate">20 FEB 2026 · SECTION 232 PROCLAMATIE</div>
+    <div class="tctit">⚙️ Section 232 uitgebreid — Koper, pharma, semiconductors, lumber</div>
+    <div class="tcbod">Feb 20 proclamatie voegde nieuwe productcategorieën toe aan Section 232 tarieven: koper, farmaceutica, halfgeleiders, hout, kritieke mineralen en energieproducten. Dit is het primaire tarief-instrument na SCOTUS sloeg IEEPA neer. Koper +25%, semiconductors = nationaal veiligheidsgrond.</div>
+    <div class="tcimp"><span class="tctag" style="background:rgba(58,143,106,.1);color:var(--pos);border:1px solid rgba(58,143,106,.2)">INTC ↑</span><span class="tctag" style="background:rgba(58,143,106,.1);color:var(--pos);border:1px solid rgba(58,143,106,.2)">TMQ/IE ↑</span><span class="tctag" style="background:rgba(184,154,56,.1);color:var(--acc);border:1px solid rgba(184,154,56,.2)">Pharma herlocatie ↑</span></div>
+  </div>
   <div class="tcard" style="border-left-color:var(--g)">
     <div class="tcdate" style="color:var(--g)">2025-2026 · $1B+ GEÏNVESTEERD</div>
     <div class="tctit">💰 Overheid koopt DIRECT aandelen in mijnbouwbedrijven</div>
@@ -496,8 +508,8 @@ td{padding:4px 8px;vertical-align:middle;white-space:nowrap;font-size:11px}
 
 // ══ DATA ══════════════════════════════════════════
 const CONFIG = {
-  dataDate: '2026-06-02',   // <<< ZET DIT OP VANDAAG bij elke update
-  versie: 'V8.0',
+  dataDate: '2026-06-04',   // <<< ZET DIT OP VANDAAG bij elke update
+  versie: 'V8.1',
   // ╔═══════════════════════════════════════════════════════╗
   // ║ LIVE PRIJZEN API SLEUTELS — vul hier je gratis keys in ║
   // ║ 1. Finnhub (primair): finnhub.io/register → gratis     ║
@@ -514,16 +526,16 @@ const CONFIG = {
   // ║ type: 'new'=nieuw, 'upd'=gewijzigd, 'rm'=verwijderd    ║
   // ╚═══════════════════════════════════════════════════════╝
   changelog: [
-    {type:'upd', txt:'V8.0: Volledig herbouwd. Nieuw layout — IBM Plex Mono, amber/teal kleuren, minder rood/groen.'},
-    {type:'upd', txt:'Duplicaten verwijderd: 40 tickers zaten in meerdere lijsten. Nu elk aandeel 1x.'},
-    {type:'new', txt:'Nieuwe cluster buys: CDW (CEO+dir $2.5M), GRNT (6 insiders $919K), RLI (4 dirs $858K), VTS (3 insiders $1.37M).'},
-    {type:'upd', txt:'GSHD bijgewerkt: CFO + 4 directors cluster $764K (1 juni).'},
-    {type:'upd', txt:'Standaard tab = AANDELEN (direct leesbaar bij openen).'}
+    {type:'new', txt:'TTD: CEO Jeff Green kocht $148M eigen geld (6M aandelen) na 60% drawdown. Sterkste founder buy 2026.'},
+    {type:'new', txt:'ADSK: Director Stacy Smith $794K open-markt koop 29 mei bij 52W low. BIM software voor infrastructure boom.'},
+    {type:'new', txt:'ALKT: General Atlantic $69.1M in twee tranches (mei 4-14). Digitale banking +33% groei.'},
+    {type:'upd', txt:'Trump Beleid: Section 301 Brazilië (1 juni), Section 232 uitgebreid met koper/pharma/semiconductors (20 feb).'},
+    {type:'upd', txt:'Datum bijgewerkt naar 4 juni 2026. 48 large caps totaal.'}
   ],
   // Tickers die NIEUW zijn vandaag (krijgen groene NIEUW badge):
-  nieuwToday: ['CDW','GRNT','RLI','VTS'],
+  nieuwToday: ['TTD','ADSK','ALKT'],
   // Tickers met GEWIJZIGDE data vandaag (krijgen gele UPD badge):
-  updToday: ['GSHD','ASTS','PLTR','TMQ','LAC'],
+  updToday: ['GSHD','ASTS','PLTR','CDW','GRNT'],
   // ╔═══════════════════════════════════════════════════════╗
   // ║ WATCH / VERWACHT — GEEN echte filings, wel vooruitblik ║
   // ║ type: 'cat'=catalyst datum, '10b'=bekend 10b5-1 plan,  ║
@@ -675,7 +687,10 @@ const LARGE=[
 {tk:'CDW',co:'CDW Corp',sec:'IT Solutions/VAR',st:'tk',score:78,trump:2,mk:14.8e9,price:109.73,hi:189.40,lo:96.20,sig:['cP','cl'],ins:[{n:'CEO',r:'CEO',cd:'P',bd:'2026-05-27',bp:'$109.73',val:'+$2.5M',dw:'+10%'},{n:'Director',r:'Director',cd:'P',bd:'2026-05-27',bp:'$109.73',val:'+$490K',dw:'+7%'}],sells:[],nv:2990000,dow:'+10%',q1r:'$5.9B',q1e:'+$2.41',q1n:'CEO + Director $2.5M cluster koop op zelfde dag bij 52W low. IT-oplossingen voor enterprise + overheid. Solide cashflow.',tt:'Overheid IT-contracten = Trump DOGE efficiency paradox. CDW levert hardware + cloud voor federal agencies.',usp:'CEO + Director $2.5M cluster op zelfde dag bij 52W low. IT enterprise + overheid. Cashflow positief.'},
 {tk:'GRNT',co:'Granite Ridge Resources',sec:'Oil & Gas Royalties',st:'en',score:82,trump:3,mk:680e6,price:5.36,hi:8.94,lo:4.20,sig:['cP','cl','tr'],ins:[{n:'6 insiders (cluster)',r:'Directors/Officers',cd:'P',bd:'2026-05-27',bp:'$5.36',val:'+$919K',dw:'+6%'}],sells:[],nv:919000,dow:'+6%',q1r:'$52M',q1e:'+$0.18',q1n:'6 (!) insiders kochten cluster op zelfde dag. Olie- en gas royalty model = passief inkomen zonder operationeel risico. Dividend yield ~8%.',tt:'Energie dominantie Trump EO = olie/gas royalties tailwind. Domestic productie stimuleren. Royalty model = geen capex risico.',usp:'6-persoons cluster zelfde dag bij laag. Royalty model (geen operationeel risico). ~8% dividend yield. Sterkste cluster-signaal deze week.'},
 {tk:'RLI',co:'RLI Corp',sec:'Specialty Insurance',st:'fi',score:77,trump:2,mk:3.1e9,price:52.06,hi:80.40,lo:45.20,sig:['cP','cl'],ins:[{n:'4 insiders (cluster)',r:'Directors',cd:'P',bd:'2026-06-01',bp:'$52.06',val:'+$858K',dw:'+7%'}],sells:[],nv:858000,dow:'+7%',q1r:'$380M',q1e:'+$1.82',q1n:'4 directors kochten cluster op 1 juni bij 52W low. Specialty insurance (property, marine, casualty). Stabiele underwriting discipline.',tt:'Deregulering financiële sector = tailwind voor verzekeraars. Basel III rollback. 4-persoons cluster 1 juni.',usp:'4-directors cluster 1 juni bij 52W low. Specialty insurance stabiel. Dividend groei 40+ jaar.'},
-{tk:'VTS',co:'Vitesse Energy Inc',sec:'Oil & Gas Royalties',st:'en',score:75,trump:3,mk:540e6,price:17.41,hi:28.60,lo:13.80,sig:['cP','cl','tr'],ins:[{n:'3 insiders (cluster)',r:'Directors/Officers',cd:'P',bd:'2026-03-31',bp:'$17.41',val:'+$1.37M',dw:'+3%'}],sells:[],nv:1370000,dow:'+3%',q1r:'$44M',q1e:'+$0.42',q1n:'3 insiders cluster $1.37M. Non-op olie/gas royalties (Williston Basin). Hoge dividend yield. Vergelijkbaar met GRNT maar in Bakken.',tt:'Trump energie dominantie + domestic olie productie. Non-op royalty = geen boorrisico. Williston Basin Bakken.',usp:'3-insiders cluster $1.37M. Non-op royalty model. Hoge dividend. Bakken Williston Basin.'}];
+{tk:'VTS',co:'Vitesse Energy Inc',sec:'Oil & Gas Royalties',st:'en',score:75,trump:3,mk:540e6,price:17.41,hi:28.60,lo:13.80,sig:['cP','cl','tr'],ins:[{n:'3 insiders (cluster)',r:'Directors/Officers',cd:'P',bd:'2026-03-31',bp:'$17.41',val:'+$1.37M',dw:'+3%'}],sells:[],nv:1370000,dow:'+3%',q1r:'$44M',q1e:'+$0.42',q1n:'3 insiders cluster $1.37M. Non-op olie/gas royalties (Williston Basin). Hoge dividend yield. Vergelijkbaar met GRNT maar in Bakken.',tt:'Trump energie dominantie + domestic olie productie. Non-op royalty = geen boorrisico. Williston Basin Bakken.',usp:'3-insiders cluster $1.37M. Non-op royalty model. Hoge dividend. Bakken Williston Basin.'},
+{tk:'TTD',co:'The Trade Desk',sec:'Ad Tech/DSP Platform',st:'tk',score:92,trump:3,mk:17.5e9,price:22.10,hi:139.80,lo:21.39,sig:['cP','ch'],ins:[{n:'Jeff Green',r:'CEO/Founder',cd:'P',bd:'2026-03-04',bp:'$24.68',val:'+$148M',dw:'+373%'}],sells:[{n:'Jay Grant (CLO)',sd:'2026-Q1',sp:'~$30',val:'-$2.1M',nt:'CLO verkocht via routine plan. CEO kocht $148M eigen geld = balans overweldigend bullish.'}],nv:148000000,dow:'+373%',q1r:'$616M',q1e:'+$0.38',q1n:'CEO Jeff Green kocht $148M (6M aandelen) op $24.68 — +373% positie uitbreiding. Aandeel +18% dag na disclosure. Founder gaat all-in na 60% drawdown. Sterkste CEO conviction 2026.',tt:'Programmatic advertising platform. AI-gedreven DSP voor CTV/video/audio. Trump deregulering big tech = minder ad-privacy restricties. AI advertentie-optimalisatie groeit.',usp:'CEO kocht $148M eigen geld (+373% positie) na 60% drawdown. Grootste founder buy 2026. Onafhankelijk DSP (niet Google/Meta). CTV groei.'},
+{tk:'ADSK',co:'Autodesk Inc',sec:'Design/CAD/BIM Software',st:'tk',score:74,trump:2,mk:49.8e9,price:231.00,hi:312.80,lo:195.20,sig:['cP'],ins:[{n:'Stacy J. Smith',r:'Director',cd:'P',bd:'2026-05-29',bp:'$230.48',val:'+$794K',dw:'+15%'}],sells:[{n:'CEO Andrew Anagnost',sd:'2026-Q1',sp:'~$250',val:'-$1.2M',nt:'CEO verkocht via 10b5-1. Director kocht $794K open markt — directe conviction.'}],nv:794000,dow:'+15%',q1r:'$1.46B',q1e:'+$2.15',q1n:'Director Smith $794K open-markt koop op 29 mei bij 52W low. CAD/BIM software voor constructie + manufacturing. AI Generative Design = groeicatalyst.',tt:'BIM software = kern van Trump infrastructure spending ($1.2T). Constructie en manufacturing digitalisering. AI-gedreven design automation.',usp:'Director $794K open-markt koop bij 52W low (-26% YTD). BIM = backbone van infrastructure boom. AI Generative Design groei.'},
+{tk:'ALKT',co:'Alkami Technology',sec:'Digital Banking Platform',st:'fi',score:79,trump:2,mk:1.8e9,price:17.20,hi:36.40,lo:13.40,sig:['cP','cl'],ins:[{n:'General Atlantic (Director)',r:'Director/10% Owner',cd:'P',bd:'2026-05-06',bp:'$16.72',val:'+$34.6M',dw:'+13%'},{n:'General Atlantic (2e tranche)',r:'Director/10% Owner',cd:'P',bd:'2026-05-14',bp:'$16.63',val:'+$34.5M',dw:'+11%'}],sells:[],nv:69100000,dow:'+13%',q1r:'$96M',q1e:'-$0.12',q1n:'General Atlantic kocht $69.1M in twee tranches (mei 4-6 en 12-14). Digitaal bank-platform voor kredietunies en regionale banken. +33% omzetgroei YoY. -27% YTD = koopmogelijkheid per directeur.',tt:'Banking deregulering Basel III rollback = groei voor fintechs. Regionale banken + kredietunies digitaliseren. Fintech tailwind Trump deregulering.',usp:'$69.1M institutionele directeur koop in twee tranches. +33% omzetgroei. Digitale banking voor regionale banken. -27% YTD = koop bij drawdown.'}];
 
 const FOREIGN=[
 {tk:'CRML',co:'Critical Metals Corp',sec:'Rare Earth Mining · Groenland',st:'mn',score:74,trump:5,mk:680e6,price:9.20,hi:14.80,lo:3.40,sig:['cP','tr','de','se'],ins:[{n:'Tony Sage',r:'Chairman',cd:'P',bd:'2026-02-10',bp:'$8.40',val:'+$420K',dw:'+4%'}],sells:[{n:'Insiders (shelf reg)',sd:'2026-02-20',sp:'~$9',val:'-$25.2M',nt:'⚠ $25.17M shelf registration = 2.8M aandelen verkoop gepland. Dilutierisico + insider overhang.'}],nv:420000,dow:'+4%',q1r:'Pre-revenue',q1e:'-$0.18',q1n:'Tanbreez (Groenland) = grootste heavy rare earth deposit Westerse wereld. Pilot plant klaar mei 2026. ⚠ Shelf registration dilutie.',tt:'Tanbreez Groenland heavy rare earths = DIRECT Project Vault doelwit. Trump wil Groenland-mineralen voor Western supply chain. Defense/clean energy kritiek. ⚠ Maar insider shelf-verkoop.',usp:'Grootste heavy REE deposit Westerse wereld (Groenland). Project Vault direct. ⚠ Shelf registration = dilutie + insider verkoop overhang.'},
