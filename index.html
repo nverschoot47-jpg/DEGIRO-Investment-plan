@@ -235,8 +235,18 @@ td{padding:4px 8px;vertical-align:middle;white-space:nowrap;font-size:11px}
 .wb-type.cat{background:rgba(74,114,168,.12);color:var(--inf)}.wb-type.t10b{background:rgba(176,72,72,.1);color:var(--neg)}.wb-type.pat{background:rgba(184,154,56,.1);color:var(--acc)}
 .wb-datum{font-family:"IBM Plex Mono";font-size:7px;color:var(--mu)}
 .wb-txt{font-size:10px;line-height:1.4;color:var(--tx2)}
-.newbadge{display:inline-block;padding:0 4px;border-radius:2px;font-family:"IBM Plex Mono";font-size:6.5px;font-weight:700;background:var(--pos);color:#04060d;margin-left:4px;animation:pulse 2s infinite;vertical-align:middle}
-.updbadge{display:inline-block;padding:0 4px;border-radius:2px;font-family:"IBM Plex Mono";font-size:6.5px;font-weight:700;background:var(--acc);color:#04060d;margin-left:4px;vertical-align:middle}
+.newbadge{display:inline-flex;align-items:center;gap:2px;padding:1px 5px;border-radius:10px;font-family:"IBM Plex Mono";font-size:6.5px;font-weight:700;background:rgba(58,143,106,.15);color:var(--pos);border:1px solid rgba(58,143,106,.4);margin-left:5px;animation:newpulse 1.8s infinite;vertical-align:middle;box-shadow:0 0 6px rgba(58,143,106,.3)}
+.newbadge::before{content:"●";font-size:6px;animation:blink 1.8s infinite}
+.updbadge{display:inline-flex;align-items:center;gap:2px;padding:1px 5px;border-radius:10px;font-family:"IBM Plex Mono";font-size:6.5px;font-weight:700;background:rgba(184,154,56,.12);color:var(--acc);border:1px solid rgba(184,154,56,.35);margin-left:5px;vertical-align:middle}
+.updbadge::before{content:"↻";font-size:7px}
+.alertbanner{background:linear-gradient(135deg,rgba(58,143,106,.06),rgba(26,36,58,.8));border:1px solid rgba(58,143,106,.25);border-radius:3px;padding:8px 14px;margin-bottom:8px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.alertbanner .aicon{font-size:16px;animation:newpulse 2s infinite}
+.alertbanner .atitle{font-family:"IBM Plex Mono";font-size:8px;letter-spacing:1.5px;color:var(--pos);font-weight:700}
+.alertbanner .aitems{display:flex;gap:5px;flex-wrap:wrap;margin-top:3px}
+.alertitem{font-family:"IBM Plex Mono";font-size:8px;padding:2px 8px;background:rgba(58,143,106,.12);border:1px solid rgba(58,143,106,.3);border-radius:10px;color:var(--pos);cursor:pointer;transition:all .1s}
+.alertitem:hover{background:rgba(58,143,106,.2)}
+.alertitem.upd{background:rgba(184,154,56,.1);border-color:rgba(184,154,56,.3);color:var(--acc)}
+@keyframes newpulse{0%,100%{opacity:1;box-shadow:0 0 4px rgba(58,143,106,.2)}50%{opacity:.7;box-shadow:0 0 10px rgba(58,143,106,.5)}}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
 
 /* ── INFO/WARN ── */
@@ -251,7 +261,7 @@ td{padding:4px 8px;vertical-align:middle;white-space:nowrap;font-size:11px}
 
 <header class="hdr">
   <div style="display:flex;align-items:center;gap:10px">
-    <div class="logo">FORM<b style="color:var(--tx)">4</b> INTEL <span id="verLbl">V8.1</span></div>
+    <div class="logo">FORM<b style="color:var(--tx)">4</b> INTEL <span id="verLbl">V8.4</span></div>
     <span class="hbadge live" id="snapBadge"><span class="dot"></span>SNAPSHOT</span>
     <span class="hbadge">CODE P · CEO/CFO/COO/CTO</span>
     <button class="hbtn" onclick="loadLivePrices()">⟳ LIVE</button>
@@ -419,10 +429,81 @@ td{padding:4px 8px;vertical-align:middle;white-space:nowrap;font-size:11px}
 <tr><td><b>CHIPS/Semiconductors</b></td><td class="up">+ MATIG</td><td style="font-size:9px;color:#8899aa">Semiconductor proclamatie jan 2026, reshoring</td><td><span class="tag tP">COHU</span><span class="tag tP">FORM</span></td><td class="up">+10</td><td style="font-size:9px;color:var(--r)">China tariffs</td></tr>
 </tbody></table></div>
 <div class="disc">Beleidsinformatie: Ballotpedia Trump EO tracker (mei 2026), Brookings Regulatory Tracker, CoinDesk (crypto EO mei 2026). Impacts zijn redactionele beoordelingen.</div>
+
+<div class="sh" style="margin-top:16px"><span style="color:var(--neg)">⏰ OP PLANNING</span> AANKOMENDE TRUMP BELEID — IMPACT OP JOUW AANDELEN</div>
+<div style="background:var(--panel);border:1px solid var(--bd);border-radius:3px;margin-bottom:12px;overflow:hidden">
+  <div style="padding:6px 12px;border-bottom:1px solid var(--bd);display:flex;justify-content:space-between;align-items:center">
+    <span style="font-family:'IBM Plex Mono';font-size:7px;letter-spacing:2px;color:var(--mu)">STATUS: 🔴 DRINGEND (&lt;30 DAGEN) · 🟡 GEPLAND · 🟢 VAN KRACHT</span>
+    <span style="font-family:'IBM Plex Mono';font-size:7px;color:var(--mu)">BIJGEWERKT 5 JUNI 2026</span>
+  </div>
+  <div style="overflow-x:auto">
+  <table style="width:100%;border-collapse:collapse">
+  <thead><tr style="background:var(--p2)">
+    <th style="padding:5px 10px;font-family:'IBM Plex Mono';font-size:7px;color:var(--mu);text-align:left;border-bottom:1px solid var(--bd)">STATUS</th>
+    <th style="padding:5px 10px;font-family:'IBM Plex Mono';font-size:7px;color:var(--mu);text-align:left;border-bottom:1px solid var(--bd)">BELEID / ACTIE</th>
+    <th style="padding:5px 10px;font-family:'IBM Plex Mono';font-size:7px;color:var(--mu);text-align:left;border-bottom:1px solid var(--bd)">DEADLINE</th>
+    <th style="padding:5px 10px;font-family:'IBM Plex Mono';font-size:7px;color:var(--mu);text-align:left;border-bottom:1px solid var(--bd)">IMPACT</th>
+    <th style="padding:5px 10px;font-family:'IBM Plex Mono';font-size:7px;color:var(--mu);text-align:left;border-bottom:1px solid var(--bd)">JOUW AANDELEN</th>
+  </tr></thead>
+  <tbody>
+  <tr style="border-bottom:1px solid rgba(17,24,40,.5)">
+    <td style="padding:6px 10px"><span style="font-family:'IBM Plex Mono';font-size:10px">🔴</span></td>
+    <td style="padding:6px 10px"><div style="font-size:10px;font-weight:600">Section 232 Kritieke Mineralen — Tarief besluit</div><div style="font-size:9px;color:var(--tx2)">Onderhandelingen lopen. Bij mislukking: 25%+ tarieven op geïmporteerde mineralen. Tiered aanpak verwacht.</div></td>
+    <td style="padding:6px 10px"><span style="font-family:'IBM Plex Mono';font-size:9px;color:var(--neg)">13 JUL 2026</span></td>
+    <td style="padding:6px 10px"><span style="font-size:9px;color:var(--pos)">↑ BULLISH</span><div style="font-size:8px;color:var(--tx2)">Domestic + allied producenten</div></td>
+    <td style="padding:6px 10px"><div style="display:flex;flex-wrap:wrap;gap:3px"><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">UUUU</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">NB</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">TMQ</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">NXE</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">HYMC</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">IE</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">ASPI</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">LAC</span></div></td>
+  </tr>
+  <tr style="border-bottom:1px solid rgba(17,24,40,.5)">
+    <td style="padding:6px 10px"><span style="font-family:'IBM Plex Mono';font-size:10px">🔴</span></td>
+    <td style="padding:6px 10px"><div style="font-size:10px;font-weight:600">Section 301 Brazilië — Publieke reactie deadline</div><div style="font-size:9px;color:var(--tx2)">USTR actie op Braziliaanse importen aangekondigd 1 juni 2026. Na hearings tarieven mogelijk.</div></td>
+    <td style="padding:6px 10px"><span style="font-family:'IBM Plex Mono';font-size:9px;color:var(--neg)">1 JUL 2026</span></td>
+    <td style="padding:6px 10px"><span style="font-size:9px;color:var(--acc)">⚠ MIXED</span><div style="font-size:8px;color:var(--tx2)">Staal/landbouw importen</div></td>
+    <td style="padding:6px 10px"><div style="display:flex;flex-wrap:wrap;gap:3px"><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(184,154,56,.08);border:1px solid rgba(184,154,56,.2);border-radius:2px;color:var(--acc)">GATO</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(184,154,56,.08);border:1px solid rgba(184,154,56,.2);border-radius:2px;color:var(--acc)">PARR</span></div></td>
+  </tr>
+  <tr style="border-bottom:1px solid rgba(17,24,40,.5)">
+    <td style="padding:6px 10px"><span style="font-family:'IBM Plex Mono';font-size:10px">🟡</span></td>
+    <td style="padding:6px 10px"><div style="font-size:10px;font-weight:600">Section 232 Semiconductors — Bredere implementatie</div><div style="font-size:9px;color:var(--tx2)">25% tarief op bepaalde chips al van kracht (jan 2026). Bredere tarief-matrix verwacht H2 2026. CHIPS Act subsidies parallel.</div></td>
+    <td style="padding:6px 10px"><span style="font-family:'IBM Plex Mono';font-size:9px;color:var(--acc)">H2 2026</span></td>
+    <td style="padding:6px 10px"><span style="font-size:9px;color:var(--pos)">↑ DOMESTIC</span><div style="font-size:8px;color:var(--tx2)">Domestic chip makers winnen</div></td>
+    <td style="padding:6px 10px"><div style="display:flex;flex-wrap:wrap;gap:3px"><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">INTC</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">CEVA</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">CVV</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(184,154,56,.08);border:1px solid rgba(184,154,56,.2);border-radius:2px;color:var(--acc)">TTD</span></div></td>
+  </tr>
+  <tr style="border-bottom:1px solid rgba(17,24,40,.5)">
+    <td style="padding:6px 10px"><span style="font-family:'IBM Plex Mono';font-size:10px">🟡</span></td>
+    <td style="padding:6px 10px"><div style="font-size:10px;font-weight:600">Section 232 Farmaceutica — Tarieven in voorbereiding</div><div style="font-size:9px;color:var(--tx2)">Onderzoek loopt. 25%+ tarieven op geneesmiddelen en ingrediënten uit China/India verwacht. Doel: reshoring productie naar VS.</div></td>
+    <td style="padding:6px 10px"><span style="font-family:'IBM Plex Mono';font-size:9px;color:var(--acc)">2026-2027</span></td>
+    <td style="padding:6px 10px"><span style="font-size:9px;color:var(--pos)">↑ US PHARMA</span><div style="font-size:8px;color:var(--tx2)">Reshoring voordeel</div></td>
+    <td style="padding:6px 10px"><div style="display:flex;flex-wrap:wrap;gap:3px"><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">NRXP</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">ABT</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">AGIO</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">TOI</span></div></td>
+  </tr>
+  <tr style="border-bottom:1px solid rgba(17,24,40,.5)">
+    <td style="padding:6px 10px"><span style="font-family:'IBM Plex Mono';font-size:10px">🟡</span></td>
+    <td style="padding:6px 10px"><div style="font-size:10px;font-weight:600">Reciprocal Tariffs — Deadline niet-geregelde landen</div><div style="font-size:9px;color:var(--tx2)">Augustus 2026 deadline voor landen zonder bilateraal akkoord. Hoge onzekerheid. VS-UK deal al gesloten (10% auto). China 90-dag pauze loopt af.</div></td>
+    <td style="padding:6px 10px"><span style="font-family:'IBM Plex Mono';font-size:9px;color:var(--acc)">AUG 2026</span></td>
+    <td style="padding:6px 10px"><span style="font-size:9px;color:var(--acc)">⚠ BREED</span><div style="font-size:8px;color:var(--tx2)">Alle sectoren met import</div></td>
+    <td style="padding:6px 10px"><div style="display:flex;flex-wrap:wrap;gap:3px"><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(184,154,56,.08);border:1px solid rgba(184,154,56,.2);border-radius:2px;color:var(--acc)">NKE</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(184,154,56,.08);border:1px solid rgba(184,154,56,.2);border-radius:2px;color:var(--acc)">LULU</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(184,154,56,.08);border:1px solid rgba(184,154,56,.2);border-radius:2px;color:var(--acc)">INMD</span></div></td>
+  </tr>
+  <tr style="border-bottom:1px solid rgba(17,24,40,.5)">
+    <td style="padding:6px 10px"><span style="font-family:'IBM Plex Mono';font-size:10px">🟡</span></td>
+    <td style="padding:6px 10px"><div style="font-size:10px;font-weight:600">Nucleaire Renaissance — SMR vergunningen versneld</div><div style="font-size:9px;color:var(--tx2)">4 Trump EOs voor nucleaire energie. NRC vergunningstraject verkort. Microsoft/Google SMR deals. Uranium vraag stijgt voor datacenters.</div></td>
+    <td style="padding:6px 10px"><span style="font-family:'IBM Plex Mono';font-size:9px;color:var(--acc)">2026-2028</span></td>
+    <td style="padding:6px 10px"><span style="font-size:9px;color:var(--pos)">↑ URANIUM</span><div style="font-size:8px;color:var(--tx2)">Uranium + HALEU producenten</div></td>
+    <td style="padding:6px 10px"><div style="display:flex;flex-wrap:wrap;gap:3px"><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">UUUU</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">NXE</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">ASPI</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">CIFR</span></div></td>
+  </tr>
+  <tr>
+    <td style="padding:6px 10px"><span style="font-family:'IBM Plex Mono';font-size:10px">🟢</span></td>
+    <td style="padding:6px 10px"><div style="font-size:10px;font-weight:600">Section 232 Staal/Aluminium — 50% tarieven van kracht</div><div style="font-size:9px;color:var(--tx2)">50% tarieven op staal en aluminium (meeste landen). Domestic staalproducenten beschermd. Downstream constructie = hogere kosten.</div></td>
+    <td style="padding:6px 10px"><span style="font-family:'IBM Plex Mono';font-size:9px;color:var(--pos)">VAN KRACHT</span></td>
+    <td style="padding:6px 10px"><span style="font-size:9px;color:var(--pos)">↑ DOMESTIC</span><div style="font-size:8px;color:var(--tx2)">Domestic staal, constructie</div></td>
+    <td style="padding:6px 10px"><div style="display:flex;flex-wrap:wrap;gap:3px"><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">STRT</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">ESAB</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">GFF</span><span style="font-family:'IBM Plex Mono';font-size:8px;padding:1px 5px;background:rgba(58,143,106,.1);border:1px solid rgba(58,143,106,.2);border-radius:2px;color:var(--pos)">ROCK</span></div></td>
+  </tr>
+  </tbody>
+  </table>
+  </div>
+</div>
 </div></div>
 
 <!-- ══════ PANEL: AANDELEN (SC + PE + LC samen) ══════ -->
 <div id="pan-st" class="panel"><div class="w">
+<div id="alert-banner"></div>
 <div id="changelog-box"></div>
 <div class="ctrl">
   <input class="inp" id="srch-st" placeholder="Zoek ticker, bedrijf, sector…" oninput="applyF()">
@@ -508,8 +589,8 @@ td{padding:4px 8px;vertical-align:middle;white-space:nowrap;font-size:11px}
 
 // ══ DATA ══════════════════════════════════════════
 const CONFIG = {
-  dataDate: '2026-06-04',   // <<< ZET DIT OP VANDAAG bij elke update
-  versie: 'V8.1',
+  dataDate: '2026-06-08',   // <<< ZET DIT OP VANDAAG bij elke update
+  versie: 'V8.4',
   // ╔═══════════════════════════════════════════════════════╗
   // ║ LIVE PRIJZEN API SLEUTELS — vul hier je gratis keys in ║
   // ║ 1. Finnhub (primair): finnhub.io/register → gratis     ║
@@ -526,16 +607,15 @@ const CONFIG = {
   // ║ type: 'new'=nieuw, 'upd'=gewijzigd, 'rm'=verwijderd    ║
   // ╚═══════════════════════════════════════════════════════╝
   changelog: [
-    {type:'new', txt:'TTD: CEO Jeff Green kocht $148M eigen geld (6M aandelen) na 60% drawdown. Sterkste founder buy 2026.'},
-    {type:'new', txt:'ADSK: Director Stacy Smith $794K open-markt koop 29 mei bij 52W low. BIM software voor infrastructure boom.'},
-    {type:'new', txt:'ALKT: General Atlantic $69.1M in twee tranches (mei 4-14). Digitale banking +33% groei.'},
-    {type:'upd', txt:'Trump Beleid: Section 301 Brazilië (1 juni), Section 232 uitgebreid met koper/pharma/semiconductors (20 feb).'},
-    {type:'upd', txt:'Datum bijgewerkt naar 4 juni 2026. 48 large caps totaal.'}
+    {type:'new', txt:'NSP (Insperity): Co-founder/CEO Sarvadi kocht $7.9M (233K aandelen) op 3 juni. Aandeel +4.9% op nieuws. Grootste CEO koop bij Insperity in 12 maanden.'},
+    {type:'new', txt:'Trump Planning Matrix toegevoegd in Trump Beleid tab — deadlines + welke aandelen geraakt worden.'},
+    {type:'upd', txt:'Alert-banner systeem: groene pulserende banner toont direct wat nieuw/gewijzigd is. Klikbaar naar aandeel.'},
+    {type:'upd', txt:'Datum bijgewerkt naar 8 juni 2026.'}
   ],
   // Tickers die NIEUW zijn vandaag (krijgen groene NIEUW badge):
-  nieuwToday: ['TTD','ADSK','ALKT'],
+  nieuwToday: ['NSP'],
   // Tickers met GEWIJZIGDE data vandaag (krijgen gele UPD badge):
-  updToday: ['GSHD','ASTS','PLTR','CDW','GRNT'],
+  updToday: ['ASTS','LULU'],
   // ╔═══════════════════════════════════════════════════════╗
   // ║ WATCH / VERWACHT — GEEN echte filings, wel vooruitblik ║
   // ║ type: 'cat'=catalyst datum, '10b'=bekend 10b5-1 plan,  ║
@@ -544,6 +624,7 @@ const CONFIG = {
   // ║ ingediende SEC Form 4's. Verzin hier nooit aankopen.   ║
   // ╚═══════════════════════════════════════════════════════╝
   watch: [
+    {tk:'LULU', type:'cat', datum:'Sept 2026', txt:'Nieuwe CEO Heidi O\u2019Neill (ex-Nike) start officieel september. Q2 earnings ~sept. Proxy-strijd Chip Wilson settled. Catalyst: CEO-overgang + Q2 na guidance-reset.'}, 
     {tk:'MFIN', type:'pat', datum:'~Q3 2026', txt:'CEO Murstein kocht 8 kwartalen op rij — patroon suggereert mogelijk nieuwe koop bij Q2-resultaten. VERWACHTING, geen filing.'},
     {tk:'PARR', type:'pat', datum:'~Q3 2026', txt:'CEO Pate kocht 8 kwartalen op rij door analisten-verlagingen heen. Patroon suggereert continuering. VERWACHTING.'},
     {tk:'PKBK', type:'pat', datum:'~Q3 2026', txt:'Chairman/CEO 5 kwartalen op rij koper. Mogelijk opnieuw bij volgende kwartaalcijfers. VERWACHTING.'},
@@ -612,7 +693,8 @@ const SC=[{tk:'CBK',co:'Commercial Bancgroup',sec:'Banking',st:'bk',score:92,tru
 {tk:'VYX',co:'NCR Voyix Corp',sec:'Fintech/POS Systems',st:'tk',score:70,trump:2,mk:1.8e9,price:13.40,hi:17.80,lo:9.20,sig:['cP','ch'],ins:[{n:'James Kelly',r:'CEO',cd:'P',bd:'2026-05-11',bp:'$12.80',val:'+$420K',dw:'+10%'}],sells:[],nv:420000,dow:'+10%',q1r:'$680M',q1e:'+$0.18',q1n:'POS + retail/restaurant tech. Post-spinoff turnaround. CEO $420K.',tt:'Retail/restaurant POS. Banking deregulering = meer commerce. Domestische payment infra.',usp:'CEO $420K post-spinoff. POS retail+restaurant. Turnaround.'},
 
 {tk:'SUNE',co:'Sunation Energy',sec:'Solar/Energy',st:'en',score:62,trump:1,mk:88e6,price:1.80,hi:3.40,lo:0.95,sig:['cP'],ins:[{n:'Scott Maskin (CEO)',r:'CEO',cd:'P',bd:'2026-04-14',bp:'$1.77',val:'+$982K',dw:'+18%'}],sells:[],nv:982000,dow:'+18%',q1r:'$24M',q1e:'-$0.12',q1n:'CEO kocht 554K aandelen ($982K) open markt. ⚠ Solar = IRA rollback headwind, maar CEO grote persoonlijke koop bij laag.',tt:'⚠ Solar IRA-rollback headwind. MAAR: CEO $982K persoonlijke koop = sterke conviction ondanks tegenwind. Residential solar Long Island.',usp:'CEO $982K open-markt koop (554K aandelen) bij laag. ⚠ Solar headwind maar enorme CEO conviction.'},
-{tk:'STRT',co:'STRATTEC Security',sec:'Auto Parts/Security',st:'cs',score:71,trump:2,mk:420e6,price:78.40,hi:98.60,lo:42.20,sig:['cP','ch'],ins:[{n:'CEO',r:'CEO',cd:'P',bd:'2026-04-28',bp:'$74.00',val:'+$370K',dw:'+5%'}],sells:[],nv:370000,dow:'+5%',q1r:'$140M',q1e:'+$1.82',q1n:'Auto locks/security systems. Reshoring auto supply chain. CEO koopt. Turnaround met margeverbetering.',tt:'Auto supply chain reshoring = Trump tariff voordeel voor domestic parts. CEO koopt. Vehicle access/security niche.',usp:'CEO $370K. Auto security reshoring play. Margeverbetering turnaround. Domestic supply chain.'}];
+{tk:'STRT',co:'STRATTEC Security',sec:'Auto Parts/Security',st:'cs',score:71,trump:2,mk:420e6,price:78.40,hi:98.60,lo:42.20,sig:['cP','ch'],ins:[{n:'CEO',r:'CEO',cd:'P',bd:'2026-04-28',bp:'$74.00',val:'+$370K',dw:'+5%'}],sells:[],nv:370000,dow:'+5%',q1r:'$140M',q1e:'+$1.82',q1n:'Auto locks/security systems. Reshoring auto supply chain. CEO koopt. Turnaround met margeverbetering.',tt:'Auto supply chain reshoring = Trump tariff voordeel voor domestic parts. CEO koopt. Vehicle access/security niche.',usp:'CEO $370K. Auto security reshoring play. Margeverbetering turnaround. Domestic supply chain.'},
+{tk:'NSP',co:'Insperity Inc',sec:'HR Outsourcing/PEO',st:'fi',score:82,trump:2,mk:1.3e9,price:36.05,hi:62.40,lo:26.80,sig:['cP','ch'],ins:[{n:'Paul Sarvadi',r:'Co-founder/CEO/Chairman',cd:'P',bd:'2026-06-03',bp:'$34.05',val:'+$7.9M',dw:'+25%'}],sells:[],nv:7933650,dow:'+25%',q1r:'$1.9B',q1e:'+$1.31',q1n:'Co-founder/CEO kocht $7.9M (233K aandelen) op 3 juni. Aandeel +4.9% op nieuws. HR outsourcing/PEO voor kleine en middelgrote bedrijven. Q1 EPS $1.31 (verwachting $1.24). -42% van 52W high.',tt:'HR deregulering + small business stimulering = tailwind. Werkplek-compliance outsourcing groeit bij nieuwe regelgeving. Workday partnership HRScale gelanceerd.',usp:'Co-founder/CEO $7.9M eigen geld (largest buy in 12 maanden). +4.9% direct na disclosure. -42% van 52W high = koop bij drawdown. HR outsourcing voor 375K+ werknemers.'}];
 
 const PENNY=[
 {tk:'NRXP',co:'NRx Pharmaceuticals',sec:'Biotech/CNS',st:'bt',score:88,trump:5,mk:94.9e6,price:4.10,hi:6.01,lo:1.10,sig:['cA','tr','ch'],ins:[{n:'Joseph Casper (COO)',r:'COO',cd:'A',bd:'2026-01-27',bp:'$2.39 opties',val:'100K opties',dw:'Nieuw'},{n:'Prof. Brown (CMO)',r:'CMO',cd:'A',bd:'2026-02-01',bp:'Grant',val:'Aanstelling',dw:'NIH+DARPA'}],sells:[],nv:46800,dow:'+3%',q1r:'Pre-revenue',q1e:'-$0.01',q1n:'$13.7M cash schuldenvrij. ANDA Q3 2026. MIND1 FDA clearance.',tt:'Trump EO APR 2026 psychedelische medicatie DIRECT. CMO Harvard/McLean NIH+DARPA.',usp:'ANDA Q3 2026. Eerste CCO ooit. Trump EO direct voordeel.'},
@@ -642,7 +724,7 @@ const PENNY=[
 ];
 
 const LARGE=[
-{tk:'ASTS',co:'AST SpaceMobile',sec:'Satellite/Telecom',st:'df',score:93,trump:5,mk:43.98e9,price:111.73,hi:133.86,lo:22.47,sig:['cP','cl','tr'],ins:[{n:'Abel Avellan (CEO)',r:'CEO',cd:'P',bd:'2026-04-26',bp:'$14.20',val:'+$852K',dw:'+8%'}],sells:[],nv:1138000,dow:'+8%',q1r:'$8.4M',q1e:'-$0.51',q1n:'CEO kocht bij $14, nu $83 (+490%, was ATH $129.89 jan 2026).',tt:'WH Space Policy briefings. Ex-Pentagon Director board. FCC spectrum. SpaceX IPO bull.',usp:'CEO kocht bij $14 nu $129. Direct-to-cell enige op schaal.'},
+{tk:'ASTS',co:'AST SpaceMobile',sec:'Satellite/Telecom',st:'df',score:93,trump:5,mk:43.98e9,price:107.29,hi:133.86,lo:22.47,sig:['cP','cl','tr'],ins:[{n:'Abel Avellan (CEO)',r:'CEO',cd:'P',bd:'2026-04-26',bp:'$14.20',val:'+$852K',dw:'+8%'}],sells:[],nv:1138000,dow:'+8%',q1r:'$8.4M',q1e:'-$0.51',q1n:'CEO kocht bij $14, nu $83 (+490%, was ATH $129.89 jan 2026).',tt:'WH Space Policy briefings. Ex-Pentagon Director board. FCC spectrum. SpaceX IPO bull.',usp:'CEO kocht bij $14 nu $129. Direct-to-cell enige op schaal.'},
 {tk:'SOFI',co:'SoFi Technologies',sec:'Neobank',st:'fi',score:82,trump:4,mk:20.2e9,price:16.28,hi:32.73,lo:12.86,sig:['cP','cA','tr'],ins:[{n:'Anthony Noto (CEO)',r:'CEO',cd:'P',bd:'2026-05-11',bp:'$12.80',val:'+$512K',dw:'+6%'},{n:'Nieuwe CFO',r:'CFO',cd:'P',bd:'2026-05-13',bp:'$12.85',val:'+$193K',dw:'+12%'}],sells:[],nv:705000,dow:'+6%',q1r:'$1.09B',q1e:'+$0.12',q1n:'41% YoY. SoFiUSD stablecoin.',tt:'Crypto EO 19 mei direct. CFPB defunding. CEO+CFO cluster.',usp:'$1.09B +41%. SoFiUSD stablecoin. CEO+CFO cluster.'},
 {tk:'CIFR',co:'Cipher Digital Inc',sec:'Bitcoin Mining/HPC',st:'tk',score:81,trump:5,mk:8.41e9,price:20.55,hi:25.52,lo:2.95,sig:['cP','tr'],ins:[{n:'Tyler Page (CEO)',r:'CEO',cd:'P',bd:'2026-05-14',bp:'$3.40',val:'+$510K',dw:'+15%'}],sells:[{n:'Directors',sd:'2026-05-22',sp:'~$22-23',val:'-$380K',nt:'⚠ Directors selling bij high terwijl CEO kocht'}],nv:130000,dow:'+15%',q1r:'$34.8M',q1e:'-$0.87',q1n:'Record BTC treasury. HPC pivot.',tt:'Trump pro-Bitcoin. Crypto EO direct.',usp:'Record BTC. HPC pivot. ⚠ Directors verkopen.'},
 {tk:'RBLX',co:'Roblox Corporation',sec:'Gaming',st:'tk',score:60,trump:1,mk:24.4e9,price:39.80,hi:56.40,lo:24.10,sig:['cP'],ins:[{n:'David Baszucki (CEO/Founder)',r:'CEO/Founder',cd:'P',bd:'2026-05-09',bp:'$38.20',val:'+$573K',dw:'+2%'}],sells:[],nv:573000,dow:'+2%',q1r:'$1.14B',q1e:'-$0.38',q1n:'80M+ DAU. Oprichter $573K = dataset largest.',tt:'Tech deregulering.',usp:'Oprichter $573K dataset largest. 80M+ DAU.'},
@@ -690,7 +772,8 @@ const LARGE=[
 {tk:'VTS',co:'Vitesse Energy Inc',sec:'Oil & Gas Royalties',st:'en',score:75,trump:3,mk:540e6,price:17.41,hi:28.60,lo:13.80,sig:['cP','cl','tr'],ins:[{n:'3 insiders (cluster)',r:'Directors/Officers',cd:'P',bd:'2026-03-31',bp:'$17.41',val:'+$1.37M',dw:'+3%'}],sells:[],nv:1370000,dow:'+3%',q1r:'$44M',q1e:'+$0.42',q1n:'3 insiders cluster $1.37M. Non-op olie/gas royalties (Williston Basin). Hoge dividend yield. Vergelijkbaar met GRNT maar in Bakken.',tt:'Trump energie dominantie + domestic olie productie. Non-op royalty = geen boorrisico. Williston Basin Bakken.',usp:'3-insiders cluster $1.37M. Non-op royalty model. Hoge dividend. Bakken Williston Basin.'},
 {tk:'TTD',co:'The Trade Desk',sec:'Ad Tech/DSP Platform',st:'tk',score:92,trump:3,mk:17.5e9,price:22.10,hi:139.80,lo:21.39,sig:['cP','ch'],ins:[{n:'Jeff Green',r:'CEO/Founder',cd:'P',bd:'2026-03-04',bp:'$24.68',val:'+$148M',dw:'+373%'}],sells:[{n:'Jay Grant (CLO)',sd:'2026-Q1',sp:'~$30',val:'-$2.1M',nt:'CLO verkocht via routine plan. CEO kocht $148M eigen geld = balans overweldigend bullish.'}],nv:148000000,dow:'+373%',q1r:'$616M',q1e:'+$0.38',q1n:'CEO Jeff Green kocht $148M (6M aandelen) op $24.68 — +373% positie uitbreiding. Aandeel +18% dag na disclosure. Founder gaat all-in na 60% drawdown. Sterkste CEO conviction 2026.',tt:'Programmatic advertising platform. AI-gedreven DSP voor CTV/video/audio. Trump deregulering big tech = minder ad-privacy restricties. AI advertentie-optimalisatie groeit.',usp:'CEO kocht $148M eigen geld (+373% positie) na 60% drawdown. Grootste founder buy 2026. Onafhankelijk DSP (niet Google/Meta). CTV groei.'},
 {tk:'ADSK',co:'Autodesk Inc',sec:'Design/CAD/BIM Software',st:'tk',score:74,trump:2,mk:49.8e9,price:231.00,hi:312.80,lo:195.20,sig:['cP'],ins:[{n:'Stacy J. Smith',r:'Director',cd:'P',bd:'2026-05-29',bp:'$230.48',val:'+$794K',dw:'+15%'}],sells:[{n:'CEO Andrew Anagnost',sd:'2026-Q1',sp:'~$250',val:'-$1.2M',nt:'CEO verkocht via 10b5-1. Director kocht $794K open markt — directe conviction.'}],nv:794000,dow:'+15%',q1r:'$1.46B',q1e:'+$2.15',q1n:'Director Smith $794K open-markt koop op 29 mei bij 52W low. CAD/BIM software voor constructie + manufacturing. AI Generative Design = groeicatalyst.',tt:'BIM software = kern van Trump infrastructure spending ($1.2T). Constructie en manufacturing digitalisering. AI-gedreven design automation.',usp:'Director $794K open-markt koop bij 52W low (-26% YTD). BIM = backbone van infrastructure boom. AI Generative Design groei.'},
-{tk:'ALKT',co:'Alkami Technology',sec:'Digital Banking Platform',st:'fi',score:79,trump:2,mk:1.8e9,price:17.20,hi:36.40,lo:13.40,sig:['cP','cl'],ins:[{n:'General Atlantic (Director)',r:'Director/10% Owner',cd:'P',bd:'2026-05-06',bp:'$16.72',val:'+$34.6M',dw:'+13%'},{n:'General Atlantic (2e tranche)',r:'Director/10% Owner',cd:'P',bd:'2026-05-14',bp:'$16.63',val:'+$34.5M',dw:'+11%'}],sells:[],nv:69100000,dow:'+13%',q1r:'$96M',q1e:'-$0.12',q1n:'General Atlantic kocht $69.1M in twee tranches (mei 4-6 en 12-14). Digitaal bank-platform voor kredietunies en regionale banken. +33% omzetgroei YoY. -27% YTD = koopmogelijkheid per directeur.',tt:'Banking deregulering Basel III rollback = groei voor fintechs. Regionale banken + kredietunies digitaliseren. Fintech tailwind Trump deregulering.',usp:'$69.1M institutionele directeur koop in twee tranches. +33% omzetgroei. Digitale banking voor regionale banken. -27% YTD = koop bij drawdown.'}];
+{tk:'ALKT',co:'Alkami Technology',sec:'Digital Banking Platform',st:'fi',score:79,trump:2,mk:1.8e9,price:17.20,hi:36.40,lo:13.40,sig:['cP','cl'],ins:[{n:'General Atlantic (Director)',r:'Director/10% Owner',cd:'P',bd:'2026-05-06',bp:'$16.72',val:'+$34.6M',dw:'+13%'},{n:'General Atlantic (2e tranche)',r:'Director/10% Owner',cd:'P',bd:'2026-05-14',bp:'$16.63',val:'+$34.5M',dw:'+11%'}],sells:[],nv:69100000,dow:'+13%',q1r:'$96M',q1e:'-$0.12',q1n:'General Atlantic kocht $69.1M in twee tranches (mei 4-6 en 12-14). Digitaal bank-platform voor kredietunies en regionale banken. +33% omzetgroei YoY. -27% YTD = koopmogelijkheid per directeur.',tt:'Banking deregulering Basel III rollback = groei voor fintechs. Regionale banken + kredietunies digitaliseren. Fintech tailwind Trump deregulering.',usp:'$69.1M institutionele directeur koop in twee tranches. +33% omzetgroei. Digitale banking voor regionale banken. -27% YTD = koop bij drawdown.'},
+{tk:'LULU',co:'lululemon athletica',sec:'Athletic Apparel',st:'cs',score:71,trump:1,mk:14.8e9,price:113.00,hi:339.15,lo:111.17,sig:['cP','cl','ch'],ins:[{n:'Charles Bergh',r:'Director',cd:'P',bd:'2026-03-20',bp:'$164.20',val:'+$1.04M',dw:'+22%'},{n:'Andre Maestrini',r:'Interim Co-CEO',cd:'P',bd:'2026-04-01',bp:'$151.02',val:'+$495K',dw:'+10%'}],sells:[{n:'Nicole Neuburger (CMO)',sd:'2026-04-08',sp:'$161.00',val:'-$100K',nt:'CMO kleine verkoop 622 aandelen.'}],nv:1535000,dow:'+22%',q1r:'$2.41B',q1e:'+$2.60',q1n:'Q1 4 juni 2026: omzet +4% maar margins onder druk, guidance verlaagd. Americas -5%. Insiders kochten op $151-164, aandeel nu $113 = onderwater. -67% van ATH.',tt:'Minimale Trump-tie. Tarief headwind Aziatische productie. Proxy-strijd Chip Wilson (settled). Nieuwe CEO Heidi O’Neill (ex-Nike) start sept 2026.',usp:'Director + Co-CEO $1.54M bij 52W drawdown. Q1 guidance cut 4 juni - insiders onderwater op $151-164. Nieuwe CEO sept 2026 = turnaround. -67% van ATH.'}];
 
 const FOREIGN=[
 {tk:'CRML',co:'Critical Metals Corp',sec:'Rare Earth Mining · Groenland',st:'mn',score:74,trump:5,mk:680e6,price:9.20,hi:14.80,lo:3.40,sig:['cP','tr','de','se'],ins:[{n:'Tony Sage',r:'Chairman',cd:'P',bd:'2026-02-10',bp:'$8.40',val:'+$420K',dw:'+4%'}],sells:[{n:'Insiders (shelf reg)',sd:'2026-02-20',sp:'~$9',val:'-$25.2M',nt:'⚠ $25.17M shelf registration = 2.8M aandelen verkoop gepland. Dilutierisico + insider overhang.'}],nv:420000,dow:'+4%',q1r:'Pre-revenue',q1e:'-$0.18',q1n:'Tanbreez (Groenland) = grootste heavy rare earth deposit Westerse wereld. Pilot plant klaar mei 2026. ⚠ Shelf registration dilutie.',tt:'Tanbreez Groenland heavy rare earths = DIRECT Project Vault doelwit. Trump wil Groenland-mineralen voor Western supply chain. Defense/clean energy kritiek. ⚠ Maar insider shelf-verkoop.',usp:'Grootste heavy REE deposit Westerse wereld (Groenland). Project Vault direct. ⚠ Shelf registration = dilutie + insider verkoop overhang.'},
@@ -1289,6 +1372,27 @@ function buildRTW(){
   </div>`;
 }
 
+// Build prominent alert banner
+function buildAlertBanner(){
+  const box=document.getElementById('alert-banner');
+  if(!box)return;
+  const nn=CONFIG.nieuwToday.length, nu=CONFIG.updToday.length;
+  if(!nn&&!nu){box.innerHTML='';return;}
+  const newItems=CONFIG.nieuwToday.map(tk=>`<span class="alertitem" onclick="jumpToTicker('${tk}')">${tk}</span>`).join('');
+  const updItems=CONFIG.updToday.map(tk=>`<span class="alertitem upd" onclick="jumpToTicker('${tk}')">${tk}</span>`).join('');
+  box.innerHTML=`<div class="alertbanner">
+    <span class="aicon">\uD83D\uDD14</span>
+    <div style="flex:1">
+      <div class="atitle">\u2728 NIEUW DEZE UPDATE \u2014 ${CONFIG.dataDate}</div>
+      <div class="aitems">
+        ${nn?`<span style="font-family:'IBM Plex Mono';font-size:7px;color:var(--mu)">NIEUW:</span>${newItems}`:''}
+        ${nu?`<span style="font-family:'IBM Plex Mono';font-size:7px;color:var(--mu);margin-left:8px">BIJGEWERKT:</span>${updItems}`:''}
+      </div>
+    </div>
+    <span style="font-family:'IBM Plex Mono';font-size:9px;color:var(--mu);cursor:pointer;padding:2px 6px" onclick="this.closest('.alertbanner').style.display='none'">\u2715</span>
+  </div>`;
+}
+
 // ══ CHANGELOG / WATCH ════════════════════════════════
 function buildChangelog(){
   const box=document.getElementById('changelog-box');
@@ -1346,7 +1450,7 @@ renderFR();
 buildFeedST();
 buildBal();
 buildRTW();
-buildChangelog();
+buildAlertBanner();buildAlertBanner();buildChangelog();
 buildWatch();
 renderCmpBar();
 
